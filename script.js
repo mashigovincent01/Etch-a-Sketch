@@ -7,19 +7,19 @@ populateGrid(size);
 
 var gridCells = document.getElementsByClassName("grid-cell");
 
-var mousedown = false
-document.addEventListener("mousedown", ()=>{
-    mousedown = true;
-});
+// var mousedown = false
+// document.addEventListener("mousedown", ()=>{
+//     mousedown = true;
+// });
 
-document.addEventListener("mouseup", ()=>{
-    mousedown = false;
-})
+// document.addEventListener("mouseup", ()=>{
+//     mousedown = false;
+// })
 function addEventListenersOnCells(){
     for(let i = 0; i < gridCells.length; i++){
         // alert("Here")
 
-        gridCells[i].addEventListener("mousedown", ()=>{
+        gridCells[i].addEventListener("mouseover", ()=>{
             if(rainbowMode){
                 color = randomColor();
             }
@@ -30,7 +30,7 @@ function addEventListenersOnCells(){
         })
         gridCells[i].addEventListener("mouseover", ()=>{
             // alert("Hey");
-            if(mousedown){
+            // if(mousedown){
                 if(rainbowMode){
                     color = randomColor();
                 }
@@ -38,7 +38,7 @@ function addEventListenersOnCells(){
                     color = "lightgrey";
                 }
                 gridCells[i].style.backgroundColor = color;
-            }
+            // }
         });
    
     }
